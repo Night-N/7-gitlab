@@ -2,20 +2,23 @@
 
 ### Задание 1
 
-![](ссылка на скриншот 1)`
+![](https://github.com/Night-N/7-gitlab/blob/master/img/gitlab-runner.jpg)`
 
 
 ---
 
 ### Задание 2-3
 
-Чтобы билд запускался не дожидаясь теста, в билде указал
+Чтобы билд запускался не дожидаясь теста, в билде указал:
+```
   dependencies: []
-
-Тест запускается только при изменении файлов *.go
+```
+Тест запускается только при изменении файлов *.go:
+```
   only:
    changes:
      - '*.go'
+```
 
 ```
 stages:
@@ -50,4 +53,6 @@ build:
   dependencies: []
 ```
 
-![](ссылка на скриншот 2)`
+https://github.com/Night-N/7-gitlab/blob/master/img/gitlab-ci.yml
+
+![](https://github.com/Night-N/7-gitlab/blob/master/img/gitlab%20with%20sonar.jpg)`
