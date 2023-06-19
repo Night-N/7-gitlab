@@ -15,18 +15,18 @@
 
 - Gitlab устанавливается на локальной машине с помощью Vagrant.
 - Используется образ ubuntu/bionic64 18.04
-- На машине устанавливается Docker, необходимые программы для гитлаба openssh-server ca-certificates tzdata perl.
+- На машине устанавливается Docker, необходимые программы для гитлаба openssh-server ca-certificates tzdata perl
 - Гитлаб устанавливается с переменной с адресом по которому будет доступен gitlab
-- Gitlab runner и Sonar запускаяются в контейнерах Docker. 
+- Gitlab runner и Sonar запускаются в контейнерах Docker. 
 ```
 sudo EXTERNAL_URL="http://gitlab.localdomain" apt-get install gitlab-ee
 ```
 [vagrantfile](./vagrantfile)
 
-Получение первичного пароля:
+- Получение первичного пароля:
 >sudo cat /etc/gitlab/initial_root_password
 
-Регистрация раннера:
+- Регистрация раннера:
 ```bash
    docker run -ti --rm --name gitlab-runner \
      --network host \
@@ -35,13 +35,13 @@ sudo EXTERNAL_URL="http://gitlab.localdomain" apt-get install gitlab-ee
      gitlab/gitlab-runner:latest register
 ```
 
-Конфигурация раннера для docker-in-docker:
+- Конфигурация раннера для docker-in-docker:
 ```yaml
     volumes = ["/cache", "/var/run/docker.sock:/var/run/docker.sock"]
     extra_hosts = ["gitlab.localdomain:192.168.56.10"]
 ```
 
-Запуск:
+- Запуск:
 ```bash
    docker run -d --name gitlab-runner --restart always \
      --network host \
@@ -50,10 +50,11 @@ sudo EXTERNAL_URL="http://gitlab.localdomain" apt-get install gitlab-ee
      gitlab/gitlab-runner:latest
 ```
 
-Запуск Sonarqube:
+- Запуск Sonarqube:
 >docker-compose up -d
 [docker-compose.yaml](./docker-compose.yaml)
 
+- Скриншот зарегистрированного раннера:
 ![](./img/gitlab-runner.jpg)`
 
 ## Задание 2-3
