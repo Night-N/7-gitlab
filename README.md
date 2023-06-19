@@ -52,6 +52,7 @@ sudo EXTERNAL_URL="http://gitlab.localdomain" apt-get install gitlab-ee
 
 - Запуск Sonarqube:
 >docker-compose up -d
+
 [docker-compose.yaml](./docker-compose.yaml)
 
 - Скриншот зарегистрированного раннера:
