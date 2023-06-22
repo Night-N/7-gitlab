@@ -19,7 +19,7 @@
 - Гитлаб устанавливается с переменной с адресом по которому будет доступен gitlab
 - Gitlab runner и Sonar запускаются в контейнерах Docker. 
 ```
-sudo EXTERNAL_URL="http://gitlab.localdomain" apt-get install gitlab-ee
+sudo EXTERNAL_URL="http://gitlab.localdomain" apt-get install gitlab-ce
 ```
 [vagrantfile](./vagrantfile)
 
